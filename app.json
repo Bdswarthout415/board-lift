@@ -1,0 +1,43 @@
+{
+  "addons": [
+    "logdna",
+    "newrelic",
+    "papertrail",
+    "heroku-postgresql",
+    "heroku-redis"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/gradle"
+    }
+  ],
+  "env": {
+    "GRADLE_TASK": {
+      "required": true
+    },
+    "LOGDNA_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_LICENSE_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_LOG": {
+      "required": true
+    },
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    },
+    "REDIS_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "board-lift",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
